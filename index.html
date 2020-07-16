@@ -26,14 +26,14 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-4">
-                                <img src="unnamed.png" alt="weblogo" style="width: 200px;">
+                                <img src="resources/unnamed.png" alt="weblogo" style="width: 200px;">
                             </div>
                             <div class="col-6">
-                                <p class="text-dark h3 mt-4"><ins>Covid-19 Informatery Webpage</ins></p>
+                                <p class="text-dark h3 mt-4"><ins>Covid-19 Informatory Webpage</ins></p>
                             </div>
                             <div class="2">
                                 <div class="m-4">
-                                    <button type="button" class="btn btn-danger ">Log Out</button>
+                                    <button type="button" class="btn btn-danger" id="log_out">Log Out</button>
                                 </div>
                             </div>
                         </div>
@@ -55,35 +55,164 @@
                                 <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Features</a>
+                                <a class="nav-link" href="covid_record.html">All Records</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
+                                <a class="nav-link" href="fqa.html">FAQ's</a>
                             </li>
                         </ul>
                     </div>
                 </nav>
             </div>
         </div>
-        
-    </div>
-    </div>
+
+        <div class="row">
+            <div class="col m-3 alert alert-secondary">
+                <div><p class="h3 text-info">Over View</p></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div>
+                    <span class="badge badge-warning p-3 m-4">Covid-19 Spread Status around Globe</span>
+                    <br>
+                    <small class="m-4">last update<p id="date" class="ml-4"></p></small>
+                    <p class="m-4"> Total Cases around Globe</p>
+                    <p class="m-4">Todays Status around Globe</p>
+                    <p id="date_today"></p>
+                </div>
+            </div>
+
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-2">
+                        <div class="card" style="width: 120px;">
+                            <img src="resources\totalcases logo.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p id="total_case" class="card-title"></p>
+                                <p id="total_case_today" class="card-title"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="card" style="width: 120px;">
+                            <img src="resources\active cases.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p id="active_case" class="card-title"></p>
+                                <p id="active_case_today" class="card-title"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="card" style="width: 120px;">
+                            <img src="resources\deaths.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p id="total_deaths" class="card-title"></p>
+                                <p id="total_deaths_today" class="card-title"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="card" style="width: 120px;">
+                            <img src="resources\recovered.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p id="total_recovered" class="card-title"></p>
+                                <p id="total_recovered_today" class="card-title"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-2">
+                        <div class="card" style="width: 120px;">
+                            <img src="resources\country.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p id="total_country" class="card-title"></p>
+                                <p id="total_case_today" class="card-title"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+                <div class="col m-3 alert alert-secondary">
+                    <div><p class="h3 text-info">Awareness</p></div>
+            </div>
+        </div>
 
 
-    <div class="row">
-        <div class="col">
-            <nav class="navbar navbar-light bg-light">
-                <form class="form-inline ">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
-            </nav>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-4">
+                <div>
+                    <img src="resources\follow-up-posts-01.jpg" alt="poster-1" style="width:500px">
+                    <a href="resources\follow-up-posts-01.jpg" target="_blank" class="btn btn-primary btn-lg btn-block m-2">Download Poster</a>
+                </div>
+            </div>
+            <div class="col col-12 col-lg-4">
+                <img src="resources\follow-up-posts-02.jpg" alt="poster-3" style="width:500px">
+                <a href="resources\follow-up-posts-02.jpg" target="_blank" class="btn btn-primary btn-lg btn-block m-2">Download Poster</a>
+            </div>
+            <div class="col col-12 col-lg-4">
+                <img src="resources\its-on-us-to-take-care-of-those-who-care-of-us (1).jpg" alt="poster-3" style="width:500px">
+                <a href="resources\its-on-us-to-take-care-of-those-who-care-of-us (1).jpg"  target="_blank" class="btn btn-primary btn-lg btn-block m-2">Download Poster</a>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="row alert alert-info">
+
+
+            <div class="col-5">
+                <p> See Novel coronavirus (2019-nCoV) video by WHO</p>
+            </div>
+
+
+
+            <div class="col-3">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#vodeo_Modal">
+                    View Video
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="vodeo_Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Novel coronavirus (2019-nCoV)
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/mOV1aBVYKGA"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-
-
-    </div>
-    <script></script>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 
 </html>

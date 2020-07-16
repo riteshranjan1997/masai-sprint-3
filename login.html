@@ -3,28 +3,93 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
 </head>
 
-<body background="ph-COVID19-poly-genericround@1x_.jpg" >
+<body background="resources/ph-COVID19-poly-genericround@1x_.jpg">
     <div class="container">
         <div class="row">
+
+            <div class="col-5">
+                <div class="container m-4">
+                    <img src="resources/unnamed.png" alt="weblogo" style="width: 200px;">
+                    <p class="text-dark h4 mt-4"><ins>Covid-19 Informatory Webpage</ins></p>
+                </div>
+            </div>
+
+
             <div class="col-6  m-4 bg-warning p-4 rounded">
                 <div>
                     <div class="form-group">
-                        <label for="userid">Email address</label><small class="text-danger">*</small>
-                        <input type="text" placeholder="UserId" id="userid" class="form-control">
+                        <label for="log_id">Email address</label><small class="text-danger">*</small>
+                        <input type="text" placeholder="UserId" id="log_id" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="pass">Password</label><small class="text-danger">*</small>
-                        <input type="password" placeholder="password" id="pass" class="form-control">
-                        <small id="error" class="form-text text-danger" style="white-space: pre-line;"></small>
-                        <small>New User<a href="">Register</a></small>
+                        <label for="log_pass">Password</label><small class="text-danger">*</small>
+                        <input type="password" placeholder="password" id="log_pass" class="form-control">
+                        <small id="log_error" class="form-text text-danger"></small>
+
+
+                        <small>New User <u><a type="button" class="text-primary" data-toggle="modal"
+                                    data-target="#registerModal">Register Here
+                                </a></u></small>
                     </div>
-                    <button id="submit" class="btn btn-primary">Login</button>
+                    <button id="log_submit" class="btn btn-primary">Login</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Register with Us</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+
+                    <form id="register_form">
+                        <div class="form-group">
+                            <label for="register_name">Full Name</label><small class="text-danger">*</small>
+                            <input type="email" class="form-control" id="register_name" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                            <label for="register_userid">Email Id</label><small class="text-danger">*</small>
+                            <input type="email" class="form-control" id="register_userid" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share
+                                your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="register_pass">Password</label><small class="text-danger">*</small>
+                            <input type="password" class="form-control" id="register_pass">
+                        </div>
+                    </form>
+                    <small class="text-danger" id="register_error"></small>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="register">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="login.js"></script>
+
 </body>
 
 </html>

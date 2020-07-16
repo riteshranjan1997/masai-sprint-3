@@ -1,59 +1,100 @@
 window.addEventListener("load", add)
 
 function add() {
-    var submit = document.getElementById("form")
-    submit.addEventListener("submit", auth)
+    var submit = document.getElementById("log_submit")
+    submit.addEventListener("click", auth)
+    var reg = document.getElementById("register")
+    reg.addEventListener("click", register)
 }
-
-var auth_customer_arr = [
-    {
-        user: "ritesh@gmail.com",
-        admin: "adminritesh@abc.com",
-        pass: "12345"
-    },
-    {
-        user: "ram@gmail.com",
-        admin: "adminram@abc.com",
-        pass: "5500"
-    },
-    {
-        user: "ravi",
-        pass: "87898"
-    },
-    {
-        user: "qwerty",
-        pass: "55500"
-    },
-]
-
 
 var current_user = ""
 
 function auth(elem) {
     elem.preventDefault()
-    console.log(elem.target)
-    var user = document.getElementById("log").value
-    var pass = document.getElementById("pass").value
-    for (var i = 0; i < auth_customer_arr.length; i++) {
-        var x = auth_customer_arr[i]
-        if (user == x.user && pass == x.pass) {
-            current_user = x.user
-            localStorage.setItem("user", x.user)
-            window.location.replace("index.html")
-        }  
+    var user = document.getElementById("log_id").value
+    var pass_elem = document.getElementById("log_pass")
+    var pass = pass_elem.value
+    pass_elem.value = ""
+
+    var data = localStorage.getItem("user_record")
+
+        arr = JSON.parse(data) || []
+        var flag = false
+        for(var i = 0 ; i < arr.length ; i++){
+            var x = arr[i]
+            if(arr[i].user == user && arr[i].pass == pass){
+                current_user = arr[i].name
+                flag = true
+            }
+        }
+
+    if(flag == true){
+        current_user = x.user
+        localStorage.setItem("user", x.user)
+        window.location.replace("index.html")
+    }
+
+    else{
+        var log_error = document.getElementById("log_error")
+        log_error.textContent = "Wrong Credincials"
+        remove(log_error)
     }
 }
 
-function track() {
-    var data = localStorage.getItem("record")
+function register() {
+    var name = document.getElementById("register_name").value
+    var userid = document.getElementById("register_userid").value
+    var pass_elem = document.getElementById("register_pass")
 
-    arr = JSON.parse(data) || []
-    var log = {
-        user: current_user,
-        time: Date.now()
+    var pass = pass_elem.value
+
+    pass_elem.value = ""
+
+    if (userid != "" && pass != "" && name != "") {
+
+
+        var data = localStorage.getItem("user_record")
+
+        arr = JSON.parse(data) || []
+
+        for(var i = 0 ; i < arr.length ; i++){
+            var x = arr[i]
+            if(arr[i].user == userid){
+            var x = document.getElementById("register_error")
+                x.textContent = "User allready registered"
+                remove(x)
+                return
+            }
+        }
+
+        var new_user = {
+            name: name,
+            user: userid,
+            pass: pass
+        }
+        arr.push(new_user)
+
+        var str = JSON.stringify(arr)
+
+        localStorage.setItem("user_record", str)
+
+        alert("Register Successful\nPlease Login")
+        window.location.replace("login.html")
     }
-    arr.push(log)
 
-    var str = JSON.stringify(arr)
+    else{
+        var clear = document.getElementById("register_error")
+        clear.textContent = "Fill all the fields"
+        remove(clear)
+        
+    }
+}
 
-    localStorage.setItem("record", str)
+
+function remove(x){
+    var elem = x
+ setTimeout(function(){
+    elem.textContent=""
+},4000)
+
+}
